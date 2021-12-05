@@ -6,6 +6,12 @@
  * Help generate some jargon by writing a program that converts a long name like Portable Network Graphics to its acronym (PNG).
  */
 
-function parse(input: string) {}
+function parse(input: string) {
+    let stringArray = input.split(" ");
+    let acronym = ""
+    for (let a = 0; a < stringArray.length; a++) {
+        acronym.concat(stringArray[a][0]);
+    }
+}
 
 export { parse };
