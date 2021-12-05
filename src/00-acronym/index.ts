@@ -8,11 +8,14 @@
 
 function parse(input: string) {
     let stringArray = input.split(" ");
+    console.log(`stringArray type is ${typeof stringArray}`)
     let acronym = ""
     for (let a = 0; a < stringArray.length; a++) {
         acronym.concat(stringArray[a][0]);
     }
     return acronym;
 }
+
+parse("Portable Network Graphics");
 
 export { parse };
