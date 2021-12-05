@@ -12,6 +12,7 @@ function parse(input: string) {
     for (let a = 0; a < stringArray.length; a++) {
         acronym.concat(stringArray[a][0]);
     }
+    return acronym;
 }
 
 export { parse };
