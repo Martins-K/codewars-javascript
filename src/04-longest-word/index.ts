@@ -13,12 +13,9 @@
  */
 
 function longestWord(sen: string) {
-    sen.replace(/[^a-z0-9+]+/gi, '');
-    let arr = sen.split(" ");
-    console.log(arr);
+    let arr = sen.replace(/[^\w\s]/gi, '').split(" ");
     let longestWord = "";
     for (let index = 0; index < arr.length; index++) {
-        console.log(`Current element is ${arr[index]}`);
         if (arr[index].length > longestWord.length) {
             longestWord = arr[index];
         }       
