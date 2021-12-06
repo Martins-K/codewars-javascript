@@ -13,6 +13,23 @@
  * palindrome("abcdefg") === false
  */
 
-function palindrome(str: string) {}
+function palindrome(str: string) {
+    let arr = str.split("");
+    let reverseArr = [];
+    let i = 0;
+    for (let a = arr.length - 1; a >= 0; a--) {
+        reverseArr[i] = arr[a];
+        i++;
+    }
+    // arr.join("");
+    // reverseArr.join("");
+    console.log(`arr is \"${arr.join("")}\"`);
+    console.log(`reverseArr is \"${reverseArr.join("")}\"`);
+    if (arr.join("") == reverseArr.join("")) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 export { palindrome };
