@@ -12,6 +12,10 @@
  * reverseInt(-90) === -9
  */
 
-function reverse(int: number) {}
+function reverse(int: number) {
+    // let arr = int.toString().replace("0", "").split("");
+    let a = 500;
+    console.log(`500 reversed is ${a.toString().replaceAll("0", "").split("")}`);
+}
 
 export { reverse };
