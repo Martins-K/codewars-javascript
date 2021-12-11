@@ -15,11 +15,21 @@
  */
 
 class Stack {
-  push(n: number) {}
+  data : number[] = [];
+  constructor() {
+    this.data = [];
+  }
+  push(n: number) {
+    this.data.push(n);
+  }
 
-  pop() {}
+  pop() {
+    return this.data.pop();
+  }
 
-  peek() {}
+  peek() {
+    return this.data[this.data.length-1];
+  }
 }
 
 export { Stack };
