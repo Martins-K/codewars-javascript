@@ -12,7 +12,7 @@
  * q.remove(); // returns 1
  */
 
- class Queue {
+ class Queue  {
    data: any[] = [] ;
   constructor() {
     this.data = [];
