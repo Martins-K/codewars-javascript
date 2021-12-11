@@ -37,18 +37,15 @@ class PhoneNumber {
     this.rawNumber = input;
   }
   number() {
-    if (this.rawNumber.length != 9 || this.rawNumber[0] != "1") {
-      let arr = this.rawNumber.split("");
-      let newArray = [];
-      for (let index = 0; index < arr.length; index++) {
-       if (/\d/.test(arr[index])) {
+    let n = this.rawNumber;
+    let arr = n.split("");
+    let newArray = [];
+    for (let index = 0; index < arr.length; index++) {
+      if (/\d/.test(arr[index])) {
         newArray.push(arr[index]);
       }
     }
     return newArray.join("");
-    } else {
-      return null;
-    }
   }
 }
 
