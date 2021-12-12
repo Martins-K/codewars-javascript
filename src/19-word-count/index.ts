@@ -10,7 +10,12 @@
  */
 
 class Words {
-  count(str: string) {}
+  count(str: string) {
+    let arr = str.split(" ");
+    for (let index = 0; index < arr.length; index++) {
+      console.log()
+    }
+  }
 }
 
 export { Words };
