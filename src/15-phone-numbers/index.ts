@@ -35,17 +35,19 @@ class PhoneNumber {
   rawNumber : string;
   constructor(input: string) {
     this.rawNumber = input;
+
   }
   number() {
-    let n = this.rawNumber;
-    let arr = n.split("");
-    let newArray = [];
-    for (let index = 0; index < arr.length; index++) {
-      if (/\d/.test(arr[index])) {
-        newArray.push(arr[index]);
-      }
+    let num = this.rawNumber.toLowerCase();
+    if (num.length - num.replace(/[a-z]/g,"").length > 0) {
+      return null;
     }
-    return newArray.join("");
+    num.replace(/[^\d]/g, '');
+    if (num.length == 9 || num.length == 12) {
+      return null;
+    }
+    
+    return num;
   }
 }
 
