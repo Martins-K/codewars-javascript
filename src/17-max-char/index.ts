@@ -10,17 +10,31 @@
  */
 
 function maxChar(str: string) {
-    let count : number = 0; 
-    let char : string = "";
-    console.log(`string is ${str}, length of the string is ${str.length}`);
-    for (let index = 0; index < str.length; index++) {
-    console.log(`There are ${str.replace(str[index], "").length} instances of character "${str[index]}"`);
-        if (str.length - str.replace(str[index], "").length > count) {
-            char = str[index];
-            count = str.length - str.replace(str[index], "").length;
-        }
+
+    const charMap = {};
+    let max = 0;
+    let maxChar = '';
+
+  // create character map
+  for (let char of str) {
+    if (charMap[char]) {
+      // increment the character's value if the character existed in the map
+      charMap[char]++;
+    } else {
+      // Otherwise, the value of the character will be increamented by 1
+      charMap[char] = 1;
     }
-    return char;
+  }
+
+  // find the most commonly used character
+  for (let char in charMap) {
+    if (charMap[char] > max) {
+      max = charMap[char];
+      maxChar = char;
+    }
+  }
+
+  return maxChar;
 }
 
 export { maxChar };
