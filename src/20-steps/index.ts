@@ -19,6 +19,12 @@
  *            '####'
  */
 
-function steps(n: number) {}
+function steps(n: number) {
+    let arr = [];
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        
+    }
+}
 
 export { steps };
