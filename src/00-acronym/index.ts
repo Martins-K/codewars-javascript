@@ -7,18 +7,16 @@
  */
 
 function parse(input: string ) {
-    let arr = input.replace(/[^\w\s]/gi, '').split(" ");
-    let stringArray = arr.filter(el => {return el != ""});
-    console.log(stringArray);
-    let acronym = [];
-    for (let a = 0; a < stringArray.length; a++) {
-        if (stringArray[a][0] == "_") {
-            acronym.push(stringArray[a][1]);
-        } else {
-            acronym.push(stringArray[a][0]);
-        }
-    }
-    return acronym.join("").toUpperCase();
+    let a = 
+    input
+    .replace(/[_-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .split(' ')
+    .map(n => n[0]
+    .toUpperCase())
+    .join('');
+    return a;
 }
 
 export { parse };
