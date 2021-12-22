@@ -10,6 +10,7 @@
  * isEven(3) === false
  */
 
+
 function isEven(n: number) {
     let isEven = false;
     n < 0 ? n *= -1 : n;
