@@ -32,22 +32,23 @@
  */
 
 class PhoneNumber {
-  rawNumber : string;
+  _phoneNumber : string;
   constructor(input: string) {
-    this.rawNumber = input;
-
+    this._phoneNumber = input; 
   }
+
   number() {
-    let num = this.rawNumber.toLowerCase();
-    if (num.length - num.replace(/[a-z]/g,"").length > 0) {
-      return null;
+    let formattedNumber = this._phoneNumber.replace(/[\s()-.]/g, '')
+    if (formattedNumber.length === 11 && formattedNumber[0] === '1') {
+      formattedNumber = formattedNumber.slice(1)
     }
-    num.replace(/[^\d]/g, '');
-    if (num.length == 9 || num.length == 12) {
+    if (formattedNumber[0] === '0' || formattedNumber[0] === '1' || formattedNumber[3] === '0' || formattedNumber[3] === '1') {
       return null;
     }
     
-    return num;
+    let pattern = /^\d{10}$/;
+
+    return pattern.test(formattedNumber) ? formattedNumber : null;
   }
 }
 
