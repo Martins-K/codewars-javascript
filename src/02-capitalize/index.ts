@@ -11,6 +11,7 @@
  * capitalize('look, it is working!') === 'Look, It Is Working!'
  */
 
+
 function capitalize(str: string) {
     let strArray = str.split(" ");
     for (let a = 0; a < strArray.length; a++) {
